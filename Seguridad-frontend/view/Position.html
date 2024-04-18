@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <link rel="stylesheet" href="../Style/style.css">
+     <!-- librerias -->
+     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+     <!-- ajax -->
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <!-- Script -->
+     <script src='../js/Position.js'></script>
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Position Details</legend>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Code</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="id" id="id" value="">
+                            <input type="text" class="form-control" name="code" id="code" value="" placeholder="Code">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" id="name" value="" placeholder="Name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-10">
+                        <br>
+                        <select class="form-select" id="state">
+                            <option selected>--Seleccione--</option>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+        </div>
+
+        <div id="outputData">
+            <br>
+            <thead>
+            <table class="table table-hover">
+                <tr class="table-dark">
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    loadData();
+</script>
+</html>

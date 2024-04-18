@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="../Style/style.css">
+     <!-- librerias -->
+     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+     <!-- ajax -->
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <!-- Script -->
+     <script src='../js/User.js'></script>
+     <!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>User Details</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="id" id="id" value="">
+                            <input type="text" class="form-control" name="username" id="username" value="" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="password" id="password" value="" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Person</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="person" placeholder="Person"> <!-- Agregar el campo oculto para almacenar el ID de la persona -->
+                            <input type="hidden" id="person_id" name="person_id">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Role</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="role" placeholder="Role"> <!-- Agregar el campo oculto para almacenar el ID de la persona -->
+                            <input type="hidden" id="role_id" name="role_id">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-10">
+                        <br>
+                        <select class="form-select" id="state">
+                            <option selected>--Seleccione--</option>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+        </div>
+
+        <div id="outputData">
+            <br>
+            <thead>
+            <table class="table table-hover">
+                <tr class="table-dark">
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Person</th>
+                    <th>Role</th>
+                    <th>State</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    loadData();
+    loadPerson();
+    loadRole();
+</script>
+</html>
